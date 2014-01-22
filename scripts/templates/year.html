@@ -1,0 +1,8 @@
+<div class="year">
+    <h1><%= year %></h1>
+    <ul class="months">
+        <% _.each(months, function(month) { %>
+        <li><a href="#date/<%= year %>/<%= month.month %>"><%= month.name %></a></li>
+        <% }); %>
+    </ul>
+</div>

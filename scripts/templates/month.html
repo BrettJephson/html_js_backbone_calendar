@@ -1,0 +1,34 @@
+<div class="month">
+    <nav><a href="#date/<%= year %>"><%= year %></a></nav>
+    <h1><%= month.name %></h1>
+    <table>
+        <tr>
+            <% _.each( [].concat(_.rest(daysOfWeek), _.first(daysOfWeek)), function(dayOfWeek) { %>
+            <th><%= dayOfWeek %></th>
+            <% }); %>
+        </tr>
+        <tr>
+        <%
+            var dw = _.first(days).dayOfWeek-1;
+            dw = (dw == -1) ? 6 : dw;
+            _( dw ).times(function(){
+        %>
+            <td></td>
+        <% }); %>
+        <% _.each(days, function(day) { %>
+            <td><%= day.day %></td>
+            <% if(day.dayOfWeek == 0) { %>
+                </tr>
+                <% if(_.last(days) !== day) { %>
+                <tr>
+                <% } %>
+            <% } %>
+        <% }); %>
+        </tr>
+    </table>
+    <ul class="days">
+        <% _.each(days, function(day) { %>
+        <li><%= day.day %> - <a href="#date/<%= year %>/<%= month.value %>/<%= day.day %>"><%= day.name %></a></li>
+        <% }); %>
+    </ul>
+</div>
