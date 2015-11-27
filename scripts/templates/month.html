@@ -1,4 +1,4 @@
-<div class="month">
+<div class="month-view">
     <nav><a href="#date/<%= year %>"><%= year %></a></nav>
     <h1><%= month.name %></h1>
     <table>
@@ -16,7 +16,7 @@
             <td></td>
         <% }); %>
         <% _.each(days, function(day) { %>
-            <td><%= day.day %></td>
+            <td class="day"><a href="#date/<%= year %>/<%= month.value %>/<%= day.day %>"><%= day.day %></a></td>
             <% if(day.dayOfWeek == 0) { %>
                 </tr>
                 <% if(_.last(days) !== day) { %>
