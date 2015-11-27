@@ -1,0 +1,33 @@
+@import 'partials/normalise';
+
+$test: #ffc;
+// fonts
+$primary-font-family: Helvetica, sans-serif;
+$secondary-font-family: Arial, sans-serif;
+// colours
+$primary-colour: #121212;
+$secondary-colour: #cc0000;
+// break and tweak points
+$breakpoint-small: 24em; 		/* 24*16 = 384px */
+$tweakpoint-small-medium: 30em; /* 30*16 = 480px */
+$tweakpoint-small-large: 40em;  /* 40*16 = 640px */
+$breakpoint-medium: 46.8em; 	/* 46.8*16 = 748.8px */
+$breakpoint-large: 50em;		/* 50*16 = 800px */
+$breakpoint-extra-large: 72em;	/* 72*16 = 1152px */
+
+body {
+  background-color: $test;
+  font-size: 100%;
+  line-height: 1.125em;
+  font-family: $primary-font-family;
+  color: $primary-colour;
+}
+
+.day-view{ text-align: center; }
+.day { color: $secondary-colour; }
+.v-large {
+  font-size: 20em;
+  line-height: 1.125em;
+  padding: 0;
+  margin: 0;
+}
